@@ -4,6 +4,8 @@ const express = require("express");
 const app = express();
 const PORT = process.env.PORT;
 const userRouter=require("./routes/users.route")
+const productRoute=require("./routes/product.route")
+
 
 app.use(express.urlencoded({extended:true}));
 
@@ -13,6 +15,7 @@ app.listen(PORT, () => {
 
 
 app.use(userRouter);
+app.use(productRoute);
 
 
 app.use((req, res, next) => {
